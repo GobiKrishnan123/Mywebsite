@@ -1,17 +1,60 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import '../styles/contact.css';
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
+  const handleChange = e =>
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value
+    });
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+  const handleSubmit = async (e) => {
 
+  e.preventDefault();
+
+  try {
+
+    const response = await fetch("http://localhost:5000/send-email", {
+
+      method: "POST",
+
+      headers: {
+        "Content-Type": "application/json"
+      },
+
+      body: JSON.stringify(form)
+
+    });
+
+    if (response.ok) {
+
+      setSubmitted(true);
+
+    } else {
+
+      alert("Failed to send email");
+
+    }
+
+  } catch (error) {
+
+    console.log(error);
+    alert("Server error");
+
+  }
+
+};
   return (
     <div className="contact-page">
       <section className="contact-hero">
@@ -99,5 +142,7 @@ export default function Contact() {
         </div>
       </div>
     </div>
+
+    
   );
 }

@@ -28,7 +28,8 @@ export default function About() {
         <div className="container">
           <div className="about-grid">
             <div className="about-sidebar">
-              <div className="about-photo">👩🔬</div>
+              <div className="about-photo"><img src="../IMG_20260324_201818.png" alt="Description of image" />
+</div>
               <div className="about-quick-info">
                 <div className="quick-info-item"><span>🏛️</span><span>SASTRA University, Kumbakonam</span></div>
                 <div className="quick-info-item"><span>🔬</span><span>Department of Physics</span></div>

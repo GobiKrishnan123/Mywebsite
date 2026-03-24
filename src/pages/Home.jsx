@@ -3,29 +3,6 @@ import PublicationCard from '../components/PublicationCard';
 import publications from '../data/publications';
 import '../styles/home.css';
 
-const highlights = [
-  { icon: '⚗️', title: 'Bifunctional Catalytic Properties of Metal Oxides', desc: 'Dual catalytic activity for oxygen evolution and reduction reactions in fuel cells.' },
-  { icon: '🧲', title: 'Magnetic Properties of Metal Oxides', desc: 'Computational study of magnetic ordering transitions in microporous metal oxides.' },
-  { icon: '☀️', title: 'Photovoltaic Properties of Perovskites', desc: 'First-principles study of perovskite materials for next-generation solar cells.' },
-  { icon: '🔋', title: 'Electrical Properties of Olivine Materials', desc: 'Impedance spectroscopy of LiMPO₄ materials for energy storage applications.' },
-];
-
-const expCards = [
-  { period: 'Sep 2022 – Present', role: 'Assistant Professor', org: 'SASTRA University, Kumbakonam' },
-  { period: '2019 – 2022', role: 'UGC-DSK Post Doctoral Fellow', org: 'Central University of Tamil Nadu' },
-  { period: '2018 – 2019', role: 'Research Associate', org: 'Central University of Tamil Nadu' },
-  { period: '2012 – 2018', role: 'PhD Research Scholar', org: 'CSIR-CECRI, Karaikudi' },
-];
-
-const awards = [
-  '🏅 UGC-DSK Post Doctoral Fellowship',
-  '🌟 DST INSPIRE Fellowship',
-  '📜 SET Qualified 2016',
-  '📜 GATE Qualified 2010',
-  '🥇 Gold Medal – MSc Physics',
-  '🏆 Top 1% – IAPT National Physics Exam',
-];
-
 export default function Home() {
   return (
     <>
@@ -61,24 +38,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Research Highlights */}
-      <section className="section highlights">
-        <div className="container">
-          <p className="section-label">Research Focus</p>
-          <h2 className="section-title">Research Highlights</h2>
-          <div className="divider" />
-          <div className="highlights-grid">
-            {highlights.map((h, i) => (
-              <div className="highlight-card" key={i}>
-                <div className="highlight-icon">{h.icon}</div>
-                <h3>{h.title}</h3>
-                <p>{h.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Featured Publications */}
       <section className="section featured-pubs">
         <div className="container">
@@ -96,39 +55,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Experience Summary */}
-      <section className="section exp-summary">
-        <div className="container">
-          <p className="section-label">Career</p>
-          <h2 className="section-title">Academic Experience</h2>
-          <div className="divider" />
-          <div className="exp-timeline">
-            {expCards.map((e, i) => (
-              <div className="exp-card" key={i}>
-                <p className="exp-period">{e.period}</p>
-                <h3>{e.role}</h3>
-                <p>{e.org}</p>
-              </div>
-            ))}
-          </div>
-          <div style={{ marginTop: 32 }}>
-            <Link to="/experience" className="btn btn-outline">Full Experience →</Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Awards Strip */}
-      <section className="awards-strip">
-        <div className="container">
-          <p className="section-label">Recognition</p>
-          <h2 className="section-title">Awards & Fellowships</h2>
-          <div className="awards-list">
-            {awards.map((a, i) => (
-              <div className="award-chip" key={i}>{a}</div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Contact Preview */}
       <section className="section contact-preview">
